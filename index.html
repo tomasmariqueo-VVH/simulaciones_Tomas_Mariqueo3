@@ -16,7 +16,7 @@
 
                 <div class="izquierda">
                     <div class="logo">
-                        <img src="static/images/" alt="logo">
+                        <img src="static/images/Youtube_logo.png" alt="logo">
                         <h2><strong>Video</strong>Stream</h2>
                     </div>
                     <div class="links">
@@ -29,14 +29,14 @@
                 <div class="derecha">
                     <div class="input">
                         <input id="email" type="text">
-                        <strong>🔍</strong>
+                        <img src="static/images/botonLupa.png" alt="icono lupa">
                     </div>
                     <div class="notificacion-perfil">
                         <div class="notificacion">
-                            <img src="static/images/" alt="">
+                            <img src="static/images/botonCampana_neutral.png" alt="boton de la campana">
                         </div>
                         <div class="perfil">
-                            <img src="static/images/" alt="">
+                            <img src="static/images/icono_perfil.png" alt="imagen de perfil">
                         </div>
                     </div>
                 </div>
@@ -47,52 +47,58 @@
     <main class="main">
         <div class="seccion-principal">
             <div class="seccion video">
-                <div class="contenedor-video"></div>
+                <div class="contenedor-video">
+                    <video controls poster="static/images/MsM_bb$island.png">
+                        <source src="static/videos/My Singing Monsters - bbli$zard Island Music Video - copia.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
                 <div class="texto-video">
-                    <h2>My Singing Monsters - bbli$zard Island Music Video (Official Teaser for the Complete bb$quad)</h2>
-                    <p>3,506,860 views  Sep 5, 2026</p>
+                    <h2>My Singing Monsters - bbli$zard Island Music Video (Official Teaser for the Complete bb$quad)
+                    </h2>
+                    <p>3,506,860 vistas Sep 5, 2026</p>
                 </div>
                 <div class="likes">
                     <div class="opcion">
-                        <button class="button like">
-                            <span>👍</span>
+                        <button class="button like" id="boton-like">
+                            <img src="static/images/botonLike_neutral.png" alt="">
                             <h4>4</h4>
                         </button>
                     </div>
                     <div class="opcion">
-                        <button class="button dislike">
-                            <span>👎</span>
+                        <button class="button dislike" id="boton-dislike">
+                            <img src="static/images/botonDislike_neutral.png" alt="">
                             <h4>0</h4>
                         </button>
                     </div>
                     <div class="opcion">
-                        <button class="button compartir">
-                            <span>🔁</span>
+                        <button class="button compartir" id="boton-compartir">
+                            <img src="static/images/botonCompartir_neutral.png" alt="">
                             <h4>Compartir</h4>
                         </button>
                     </div>
                     <div class="opcion">
-                        <button class="button agregar-cola">
-                            <span>➕</span>
+                        <button class="button agregar-cola" id="boton-agregarCola">
+                            <img src="static/images/botonAgregar.png">
                             <h4>Agregar a la cola</h4>
                         </button>
                     </div>
                     <div class="opcion puntos-suspensivos">
-                        <button class="button">
-                            <h4>...</h4>
+                        <button class="button" id="boton-puntos">
+                            <img src="static/images/puntosSuspensivos.png" alt="">
                         </button>
                     </div>
                 </div>
                 <div class="canal">
                     <div class="descripcion-canal">
-                        <img src="" alt="">
+                        <img src="static/images/MsM_channel.png" alt="imagen del canal">
                         <div class="texto-canal">
                             <h3>My Singing Monsters</h3>
                             <p>2.5M subscriptores</p>
                         </div>
                     </div>
                     <div class="boton-suscribirse">
-                        <button>Suscribirse</button>
+                        <button id="boton-subscripcion">Suscribirse</button>
                     </div>
                 </div>
                 <div class="descripcion">
@@ -113,41 +119,47 @@
                 </div>
                 <div class="caja-video">
                     <div class="contenedor-miniVideo">
-
+                        <img id="portadaCambiante1" src="static/images/MannVsMachine.png" alt="">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>Mann vs. Machine</h4>
+                        <p>teamfortress</p>
+                        <p>➡ 31M hace 14a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>✖</button>
+                        <button id="boton-eliminar">
+                            <img src="static/images/botonQuitar.png" alt="">
+                        </button>
                     </div>
                 </div>
                 <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-
+                    <div class="contenedor-miniVideo" >
+                        <img id="portadaCambiante2" src="static/images/ExpirationDate.png" alt="">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>Expiration date</h4>
+                        <p>teamfortress</p>
+                        <p>➡ 47M hace 12a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>✖</button>
+                        <button>
+                            <img src="static/images/botonQuitar.png" alt="">
+                        </button>
                     </div>
                 </div>
                 <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-
+                    <div class="contenedor-miniVideo" >
+                        <img id="portadaCambiante3" src="static/images/JungleInferno.png" alt="">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>Jungle inferno</h4>
+                        <p>teamfortress</p>
+                        <p>➡ 7,3M hace 8a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>✖</button>
+                        <button>
+                            <img src="static/images/botonQuitar.png" alt="">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -158,79 +170,94 @@
                 </div>
                 <div class="caja-video">
                     <div class="contenedor-miniVideo">
-
+                        <img id="portadaCambiante4" src="static/images/MeetTheDemoman.png" alt="">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>Meet the Demoman</h4>
+                        <p>Valve</p>
+                        <p>➡ 23M hace 17a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>➕</button>
+                        <img src="static/images/botonAgregar.png">
                     </div>
                 </div>
                 <div class="caja-video">
                     <div class="contenedor-miniVideo">
-
+                        <img id="portadaCambiante5" src="static/images/PootisEngage.png" alt="PootisEngage portada">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>Pootis Engage // EXTREME</h4>
+                        <p>Ceno0</p>
+                        <p>➡ 19M hace 4a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>➕</button>
+                        <img src="static/images/botonAgregar.png">
                     </div>
                 </div>
                 <div class="caja-video">
                     <div class="contenedor-miniVideo">
-
+                        <img id="portadaCambiante6" src="static/images/RightBehindYou.png" alt="RightBehindYou portada">
                     </div>
                     <div class="mini-descripcion">
-                        <h4></h4>
-                        <p></p>
-                        <p></p>
+                        <h4>RightBehindYou.mp4</h4>
+                        <p>ThanksVideogames</p>
+                        <p>➡ 2M hace 2a</p>
                     </div>
                     <div class="agregar-eliminar">
-                        <button>➕</button>
+                        <img src="static/images/botonAgregar.png">
                     </div>
                 </div>
             </div>
         </div>
+    </main>
+    <footer class="footer">
         <div class="seccion-inferior">
             <div class="barra-superior">
                 <h2>Más videos</h2>
             </div>
             <div class="caja-video inferior">
-                <div class="contenedor-miniVideo"></div>
+                <div class="contenedor-miniVideo">
+                    <img id="portadaCambiante7" src="static/images/LetAndLiveSpy.png" alt="LetAndLiveSpy portada">
+                </div>
                 <div class="mini-descripcion">
-                    <h4></h4>
-                    <p></p>
+                    <h4>Let and Live Spy [SFM]</h4>
+                    <p>The Winglet</p>
+                    <p>➡ 47M hace 11a</p>
                 </div>
             </div>
             <div class="caja-video inferior">
-                <div class="contenedor-miniVideo"></div>
+                <div class="contenedor-miniVideo">
+                    <img id="portadaCambiante8" src="static/images/TeamFabulous2.png" alt="TeamFabulous2 portada">
+                </div>
                 <div class="mini-descripcion">
-                    <h4></h4>
-                    <p></p>
+                    <h4>Team Fabulous 2</h4>
+                    <p>kitty0706</p>
+                    <p>➡ 31M hace 14a</p>
                 </div>
             </div>
             <div class="caja-video inferior">
-                <div class="contenedor-miniVideo"></div>
+                <div class="contenedor-miniVideo">
+                    <img id="portadaCambiante9" src="static/images/TheAustralianChristmasBloodyMiracle.png" alt="TheAustralianChristmasBloodyMiracle portada">
+                </div>
                 <div class="mini-descripcion">
-                    <h4></h4>
-                    <p></p>
+                    <h4>An Australian Christmas Bloody Miracle [SFM]</h4>
+                    <p>The Winglet</p>
+                    <p>➡ 25M hace 11a</p>
                 </div>
             </div>
             <div class="caja-video inferior">
-                <div class="contenedor-miniVideo"></div>
+                <div class="contenedor-miniVideo">
+                    <img id="portadaCambiante10" src="static/images/TheRedTheBlueAndTheUgly.png" alt="TheRedTheBlueAndTheUgly portada">
+                </div>
                 <div class="mini-descripcion">
-                    <h4></h4>
-                    <p></p>
+                    <h4>The Red, The Blue and the Ugly [SFM]</h4>
+                    <p>The Winglet</p>
+                    <p>➡ 20M hace 4a</p>
                 </div>
             </div>
         </div>
-    </main>
+    </footer>
+
 
     <script src="static/js/script.js"></script>
 </body>
