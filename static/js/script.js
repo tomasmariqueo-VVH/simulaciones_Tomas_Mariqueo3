@@ -1,122 +1,111 @@
-console.log(`Conexión con JS correcta!`)
-/* Variables para el cambio de imágenes */
-let imagen1 = document.querySelector("#portadaCambiante1")
-let imagen2 = document.querySelector("#portadaCambiante2")
-let imagen3 = document.querySelector("#portadaCambiante3")
-let imagen4 = document.querySelector("#portadaCambiante4")
-let imagen5 = document.querySelector("#portadaCambiante5")
-let imagen6 = document.querySelector("#portadaCambiante6")
-let imagen7 = document.querySelector("#portadaCambiante7")
-let imagen8 = document.querySelector("#portadaCambiante8")
-let imagen9 = document.querySelector("#portadaCambiante9")
-let imagen10 = document.querySelector("#portadaCambiante10")
+console.log("Conexión con JS correcta!");
 
-imagen1.addEventListener("mouseover", function(){
-    this.src = "static/images/MvMpreview.gif";
-})
+/* 1. PREVISUALIZACIÓN DE GIFS (Delegación de Eventos) */
+document.addEventListener("mouseover", (e) => {
+    if (e.target.dataset.gif) e.target.src = e.target.dataset.gif;
+});
+document.addEventListener("mouseout", (e) => {
+    if (e.target.dataset.original) e.target.src = e.target.dataset.original;
+});
 
-imagen1.addEventListener("mouseout", function(){
-    this.src = "static/images/MannVsMachine.png";
-})
+/* 2. SISTEMA DE LIKE Y DISLIKE */
+let likes = 4, dislikes = 0;
+let estadoLike = false, estadoDislike = false;
 
-imagen2.addEventListener("mouseover", function(){
-    this.src = "static/images/ExpirationDatePreview.gif";
-})
+const btnLike = document.querySelector("#boton-like");
+const btnDislike = document.querySelector("#boton-dislike");
+const numLike = document.querySelector("#valor-like");
+const numDislike = document.querySelector("#valor-dislike");
 
-imagen2.addEventListener("mouseout", function(){
-    this.src = "static/images/ExpirationDate.png";
-})
-
-imagen3.addEventListener("mouseover", function(){
-    this.src = "static/images/idkJungleInfernoPreview.gif";
-})
-
-imagen3.addEventListener("mouseout", function(){
-    this.src = "static/images/JungleInferno.png";
-})
-
-imagen4.addEventListener("mouseover", function(){
-    this.src = "static/images/MeetTheDemomanPreview.gif";
-})
-
-imagen4.addEventListener("mouseout", function(){
-    this.src = "static/images/MeetTheDemoman.png";
-})
-
-imagen5.addEventListener("mouseover", function(){
-    this.src = "static/images/PootisEngagePreview.gif";
-})
-
-imagen5.addEventListener("mouseout", function(){
-    this.src = "static/images/PootisEngage.png";
-})
-
-imagen6.addEventListener("mouseover", function(){
-    this.src = "static/images/RightBehindYouPreview.gif";
-})
-
-imagen6.addEventListener("mouseout", function(){
-    this.src = "static/images/RightBehindYou.png";
-})
-
-imagen7.addEventListener("mouseover", function(){
-    this.src = "static/images/LetAndLiveSpyPreview.gif";
-})
-
-imagen7.addEventListener("mouseout", function(){
-    this.src = "static/images/LetAndLiveSpy.png";
-})
-
-imagen8.addEventListener("mouseover", function(){
-    this.src = "static/images/TeamFabulous2Preview.gif";
-})
-
-imagen8.addEventListener("mouseout", function(){
-    this.src = "static/images/TeamFabulous2.png";
-})
-
-imagen9.addEventListener("mouseover", function(){
-    this.src = "static/images/AnAustralianBloodyMiraclePreview.gif";
-})
-
-imagen9.addEventListener("mouseout", function(){
-    this.src = "static/images/TheAustralianChristmasBloodyMiracle.png";
-})
-
-imagen10.addEventListener("mouseover", function(){
-    this.src = "static/images/TheRedTheBlueAndTheUgly.gif";
-})
-
-imagen10.addEventListener("mouseout", function(){
-    this.src = "static/images/TheRedTheBlueAndTheUgly.png";
-})
-
-/* Variables para los botones de like/dislike */
-
-let contadorLike = 4;
-let contadorDislike = 0;
-let botonLike = document.querySelector("#boton-like")
-let valorDelLike = document.querySelector("#valor-like")
-let botonDislike = document.querySelector("#boton-dislike")
-let botonCompartir = document.querySelector("#boton-compartir")
-let botonAgregarCola = document.querySelector("#boton-agregarCola")
-
-botonLike.addEventListener("click", function(){
-    if(botonLike !== contadorLike){
-        contadorLike++;
-        valorDelLike.textContent = `${contadorLike}`;
-        this.img.src = "static/images/botonLike_activo.png"
+btnLike.addEventListener("click", () => {
+    if (!estadoLike) {
+        likes++;
+        estadoLike = true;
+        btnLike.querySelector("img").src = "static/images/botonLike_activo.png";
+        if (estadoDislike) {
+            dislikes--;
+            estadoDislike = false;
+            btnDislike.querySelector("img").src = "static/images/botonDislike_neutral.png";
+        }
     } else {
-        console.log("El botón no existe o no está definido")
+        likes--;
+        estadoLike = false;
+        btnLike.querySelector("img").src = "static/images/botonLike_neutral.png";
     }
-})
+    numLike.textContent = likes;
+    numDislike.textContent = dislikes;
+});
 
-botonLike.addEventListener("click", function(){
-    if (botonLike > 5){
-        contadorLike--;
-        valorDelLike.textContent = `${contadorLike}`;
-        this.img.src = "static/images/botonLike_neutral.png"
+btnDislike.addEventListener("click", () => {
+    if (!estadoDislike) {
+        dislikes++;
+        estadoDislike = true;
+        btnDislike.querySelector("img").src = "static/images/botonDislike_activo.png";
+        if (estadoLike) {
+            likes--;
+            estadoLike = false;
+            btnLike.querySelector("img").src = "static/images/botonLike_neutral.png";
+        }
     } else {
-        console.log("El botón no existe o no está definido")
+        dislikes--;
+        estadoDislike = false;
+        btnDislike.querySelector("img").src = "static/images/botonDislike_neutral.png";
     }
-})
+    numLike.textContent = likes;
+    numDislike.textContent = dislikes;
+});
+
+/* 3. BOTÓN DE SUSCRIPCIÓN */
+const btnSub = document.querySelector("#boton-subscripcion");
+const txtSub = document.querySelector("#texto-suscriptores");
+let suscrito = false;
+
+btnSub.addEventListener("click", () => {
+    suscrito = !suscrito;
+    btnSub.textContent = suscrito ? "Suscrito 🔔" : "Suscribirse";
+    btnSub.classList.toggle("suscrito", suscrito);
+    txtSub.textContent = suscrito ? "2.5M subscriptores (+1)" : "2.5M subscriptores";
+});
+
+/* 4. GESTIÓN DE LA COLA */
+const contenedorCola = document.querySelector("#contenedor-cola");
+
+// Añadir recomendados a la cola
+document.querySelectorAll(".boton-agregar").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const caja = btn.closest(".caja-video");
+        const img = caja.querySelector("img");
+        const titulo = caja.querySelector("h4").textContent;
+        const canal = caja.querySelectorAll("p")[0].textContent;
+        const vistas = caja.querySelectorAll("p")[1].textContent;
+
+        const nuevaCaja = document.createElement("div");
+        nuevaCaja.className = "caja-video";
+        nuevaCaja.innerHTML = `
+            <div class="contenedor-miniVideo">
+                <img src="${img.src}" data-gif="${img.dataset.gif}" data-original="${img.dataset.original}" alt="${titulo}">
+            </div>
+            <div class="mini-descripcion">
+                <h4>${titulo}</h4>
+                <p>${canal}</p>
+                <p>${vistas}</p>
+            </div>
+            <div class="agregar-eliminar">
+                <button class="boton-quitar">
+                    <img class="imagen-icono" src="static/images/botonQuitar.png" alt="Quitar">
+                </button>
+            </div>`;
+        contenedorCola.appendChild(nuevaCaja);
+    });
+});
+
+// Eliminar un video individual de la cola
+contenedorCola.addEventListener("click", (e) => {
+    const btnQuitar = e.target.closest(".boton-quitar");
+    if (btnQuitar) btnQuitar.closest(".caja-video").remove();
+});
+
+// Limpiar cola completa
+document.querySelector("#boton-limpiar-cola").addEventListener("click", () => {
+    contenedorCola.innerHTML = "";
+});

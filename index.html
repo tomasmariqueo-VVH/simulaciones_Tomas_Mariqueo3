@@ -11,45 +11,44 @@
 
 <body>
     <header class="header">
-        <header class="header">
-            <nav class="nav">
-
-                <div class="izquierda">
-                    <div class="logo">
-                        <img class="imagen-icono" src="static/images/Youtube_logo.png" alt="logo">
-                        <h2><strong>Video</strong>Stream</h2>
-                    </div>
-                    <div class="links">
-                        <a href="">inicio</a>
-                        <a href="">Explorar</a>
-                        <a href="">Mi lista</a>
-                    </div>
+        <nav class="nav">
+            <div class="izquierda">
+                <div class="logo">
+                    <img class="imagen-icono" src="static/images/Youtube_logo.png" alt="logo">
+                    <h2><strong>Video</strong>Stream</h2>
                 </div>
-
-                <div class="derecha">
-                    <div class="input">
-                        <input id="email" type="text">
-                        <img class="imagen-icono" src="static/images/botonLupa.png" alt="icono lupa">
-                    </div>
-                    <div class="notificacion-perfil">
-                        <button class="notificacion">
-                            <img class="imagen-icono" src="static/images/botonCampana_neutral.png" alt="boton de la campana">
-                        </button>
-                        <button class="perfil">
-                            <img class="imagen-icono" src="static/images/icono_perfil.png" alt="imagen de perfil">
-                        </button>
-                    </div>
+                <div class="links">
+                    <a href="">inicio</a>
+                    <a href="">Explorar</a>
+                    <a href="">Mi lista</a>
                 </div>
+            </div>
 
-            </nav>
-        </header>
+            <div class="derecha">
+                <div class="input">
+                    <input id="email" type="text" placeholder="Buscar...">
+                    <img class="imagen-icono" src="static/images/botonLupa.png" alt="icono lupa">
+                </div>
+                <div class="notificacion-perfil">
+                    <button class="notificacion">
+                        <img class="imagen-icono" src="static/images/botonCampana_neutral.png"
+                            alt="boton de la campana">
+                    </button>
+                    <button class="perfil">
+                        <img class="imagen-icono" src="static/images/icono_perfil.png" alt="imagen de perfil">
+                    </button>
+                </div>
+            </div>
+        </nav>
     </header>
+
     <main class="main">
         <div class="seccion-principal">
             <div class="seccion video">
                 <div class="contenedor-video">
                     <video controls poster="static/images/MsM_bb$island.png">
-                        <source src="static/videos/My Singing Monsters - bbli$zard Island Music Video - copia.mp4" type="video/mp4">
+                        <source src="static/videos/My Singing Monsters - bbli$zard Island Music Video - copia.mp4"
+                            type="video/mp4">
                         Tu navegador no soporta la reproducción de video.
                     </video>
                 </div>
@@ -61,31 +60,31 @@
                 <div class="likes">
                     <div class="opcion">
                         <button class="button like" id="boton-like">
-                            <img class="imagen-icono" src="static/images/botonLike_neutral.png" alt="">
+                            <img class="imagen-icono" src="static/images/botonLike_neutral.png" alt="Like">
                             <h4 id="valor-like">4</h4>
                         </button>
                     </div>
                     <div class="opcion">
                         <button class="button dislike" id="boton-dislike">
-                            <img class="imagen-icono" src="static/images/botonDislike_neutral.png" alt="">
-                            <h4>0</h4>
+                            <img class="imagen-icono" src="static/images/botonDislike_neutral.png" alt="Dislike">
+                            <h4 id="valor-dislike">0</h4>
                         </button>
                     </div>
                     <div class="opcion">
                         <button class="button compartir" id="boton-compartir">
-                            <img class="imagen-icono" src="static/images/botonCompartir_neutral.png" alt="">
+                            <img class="imagen-icono" src="static/images/botonCompartir_neutral.png" alt="Compartir">
                             <h4>Compartir</h4>
                         </button>
                     </div>
                     <div class="opcion">
                         <button class="button agregar-cola" id="boton-agregarCola">
-                            <img class="imagen-icono" src="static/images/botonAgregar.png">
+                            <img class="imagen-icono" src="static/images/botonAgregar.png" alt="Agregar a la cola">
                             <h4>Agregar a la cola</h4>
                         </button>
                     </div>
                     <div class="opcion puntos-suspensivos">
                         <button class="button">
-                            <img class="imagen-icono" src="static/images/puntosSuspensivos.png" alt="">
+                            <img class="imagen-icono" src="static/images/puntosSuspensivos.png" alt="Más opciones">
                         </button>
                     </div>
                 </div>
@@ -94,7 +93,7 @@
                         <img src="static/images/MsM_channel.png" alt="imagen del canal">
                         <div class="texto-canal">
                             <h3>My Singing Monsters</h3>
-                            <p>2.5M subscriptores</p>
+                            <p id="texto-suscriptores">2.5M subscriptores</p>
                         </div>
                     </div>
                     <div class="boton-suscribirse">
@@ -111,153 +110,189 @@
                 </div>
             </div>
         </div>
+
         <div class="seccion-lateral">
             <div class="lo-siguente">
                 <div class="barra-superior">
                     <h3>Siguente en la cola</h3>
-                    <button>Limpiar cola</button>
+                    <button id="boton-limpiar-cola">Limpiar cola</button>
                 </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-                        <img id="portadaCambiante1" src="static/images/MannVsMachine.png" alt="">
+                <div id="contenedor-cola" class="contenedor-cola">
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante1" src="static/images/MannVsMachine.png"
+                                data-gif="static/images/MvMpreview.gif" data-original="static/images/MannVsMachine.png"
+                                alt="">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>Mann vs. Machine</h4>
+                            <p>teamfortress</p>
+                            <p>➡ 31M hace 14a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-quitar">
+                                <img class="imagen-icono" src="static/images/botonQuitar.png" alt="Quitar">
+                            </button>
+                        </div>
                     </div>
-                    <div class="mini-descripcion">
-                        <h4>Mann vs. Machine</h4>
-                        <p>teamfortress</p>
-                        <p>➡ 31M hace 14a</p>
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante2" src="static/images/ExpirationDate.png"
+                                data-gif="static/images/ExpirationDatePreview.gif"
+                                data-original="static/images/ExpirationDate.png" alt="">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>Expiration date</h4>
+                            <p>teamfortress</p>
+                            <p>➡ 47M hace 12a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-quitar">
+                                <img class="imagen-icono" src="static/images/botonQuitar.png" alt="Quitar">
+                            </button>
+                        </div>
                     </div>
-                    <div class="agregar-eliminar">
-                        <button id="boton-eliminar">
-                            <img class="imagen-icono" src="static/images/botonQuitar.png" alt="">
-                        </button>
-                    </div>
-                </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo" >
-                        <img id="portadaCambiante2" src="static/images/ExpirationDate.png" alt="">
-                    </div>
-                    <div class="mini-descripcion">
-                        <h4>Expiration date</h4>
-                        <p>teamfortress</p>
-                        <p>➡ 47M hace 12a</p>
-                    </div>
-                    <div class="agregar-eliminar">
-                        <button>
-                            <img class="imagen-icono" src="static/images/botonQuitar.png" alt="">
-                        </button>
-                    </div>
-                </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo" >
-                        <img id="portadaCambiante3" src="static/images/JungleInferno.png" alt="">
-                    </div>
-                    <div class="mini-descripcion">
-                        <h4>Jungle inferno</h4>
-                        <p>teamfortress</p>
-                        <p>➡ 7,3M hace 8a</p>
-                    </div>
-                    <div class="agregar-eliminar">
-                        <button>
-                            <img class="imagen-icono" src="static/images/botonQuitar.png" alt="">
-                        </button>
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante3" src="static/images/JungleInferno.png"
+                                data-gif="static/images/idkJungleInfernoPreview.gif"
+                                data-original="static/images/JungleInferno.png" alt="">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>Jungle inferno</h4>
+                            <p>teamfortress</p>
+                            <p>➡ 7,3M hace 8a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-quitar">
+                                <img class="imagen-icono" src="static/images/botonQuitar.png" alt="Quitar">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="recomendados">
                 <div class="barra-superior">
                     <h3>Recomendados</h3>
                     <button>Actualizar</button>
                 </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-                        <img id="portadaCambiante4" src="static/images/MeetTheDemoman.png" alt="">
+                <div id="contenedor-recomendados" class="contenedor-recomendados">
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante4" src="static/images/MeetTheDemoman.png"
+                                data-gif="static/images/MeetTheDemomanPreview.gif"
+                                data-original="static/images/MeetTheDemoman.png" alt="">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>Meet the Demoman</h4>
+                            <p>Valve</p>
+                            <p>➡ 23M hace 17a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-agregar">
+                                <img class="imagen-icono" src="static/images/botonAgregar.png" alt="Agregar">
+                            </button>
+                        </div>
                     </div>
-                    <div class="mini-descripcion">
-                        <h4>Meet the Demoman</h4>
-                        <p>Valve</p>
-                        <p>➡ 23M hace 17a</p>
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante5" src="static/images/PootisEngage.png"
+                                data-gif="static/images/PootisEngagePreview.gif"
+                                data-original="static/images/PootisEngage.png" alt="PootisEngage portada">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>Pootis Engage // EXTREME</h4>
+                            <p>Ceno0</p>
+                            <p>➡ 19M hace 4a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-agregar">
+                                <img class="imagen-icono" src="static/images/botonAgregar.png" alt="Agregar">
+                            </button>
+                        </div>
                     </div>
-                    <div class="agregar-eliminar">
-                        <img class="imagen-icono" src="static/images/botonAgregar.png">
-                    </div>
-                </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-                        <img id="portadaCambiante5" src="static/images/PootisEngage.png" alt="PootisEngage portada">
-                    </div>
-                    <div class="mini-descripcion">
-                        <h4>Pootis Engage // EXTREME</h4>
-                        <p>Ceno0</p>
-                        <p>➡ 19M hace 4a</p>
-                    </div>
-                    <div class="agregar-eliminar">
-                        <img class="imagen-icono" src="static/images/botonAgregar.png">
-                    </div>
-                </div>
-                <div class="caja-video">
-                    <div class="contenedor-miniVideo">
-                        <img id="portadaCambiante6" src="static/images/RightBehindYou.png" alt="RightBehindYou portada">
-                    </div>
-                    <div class="mini-descripcion">
-                        <h4>RightBehindYou.mp4</h4>
-                        <p>ThanksVideogames</p>
-                        <p>➡ 2M hace 2a</p>
-                    </div>
-                    <div class="agregar-eliminar">
-                        <img class="imagen-icono" src="static/images/botonAgregar.png">
+                    <div class="caja-video">
+                        <div class="contenedor-miniVideo">
+                            <img id="portadaCambiante6" src="static/images/RightBehindYou.png"
+                                data-gif="static/images/RightBehindYouPreview.gif"
+                                data-original="static/images/RightBehindYou.png" alt="RightBehindYou portada">
+                        </div>
+                        <div class="mini-descripcion">
+                            <h4>RightBehindYou.mp4</h4>
+                            <p>ThanksVideogames</p>
+                            <p>➡ 2M hace 2a</p>
+                        </div>
+                        <div class="agregar-eliminar">
+                            <button class="boton-agregar">
+                                <img class="imagen-icono" src="static/images/botonAgregar.png" alt="Agregar">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
     <footer class="footer">
         <div class="seccion-inferior">
             <div class="barra-superior">
                 <h2>Más videos</h2>
             </div>
-            <div class="caja-video inferior">
-                <div class="contenedor-miniVideo">
-                    <img id="portadaCambiante7" src="static/images/LetAndLiveSpy.png" alt="LetAndLiveSpy portada">
+            <div class="grid-mas-videos">
+                <div class="caja-video inferior">
+                    <div class="contenedor-miniVideo">
+                        <img id="portadaCambiante7" src="static/images/LetAndLiveSpy.png"
+                            data-gif="static/images/LetAndLiveSpyPreview.gif"
+                            data-original="static/images/LetAndLiveSpy.png" alt="LetAndLiveSpy portada">
+                    </div>
+                    <div class="mini-descripcion">
+                        <h4>Let and Live Spy [SFM]</h4>
+                        <p>The Winglet</p>
+                        <p>➡ 47M hace 11a</p>
+                    </div>
                 </div>
-                <div class="mini-descripcion">
-                    <h4>Let and Live Spy [SFM]</h4>
-                    <p>The Winglet</p>
-                    <p>➡ 47M hace 11a</p>
+                <div class="caja-video inferior">
+                    <div class="contenedor-miniVideo">
+                        <img id="portadaCambiante8" src="static/images/TeamFabulous2.png"
+                            data-gif="static/images/TeamFabulous2Preview.gif"
+                            data-original="static/images/TeamFabulous2.png" alt="TeamFabulous2 portada">
+                    </div>
+                    <div class="mini-descripcion">
+                        <h4>Team Fabulous 2</h4>
+                        <p>kitty0706</p>
+                        <p>➡ 31M hace 14a</p>
+                    </div>
                 </div>
-            </div>
-            <div class="caja-video inferior">
-                <div class="contenedor-miniVideo">
-                    <img id="portadaCambiante8" src="static/images/TeamFabulous2.png" alt="TeamFabulous2 portada">
+                <div class="caja-video inferior">
+                    <div class="contenedor-miniVideo">
+                        <img id="portadaCambiante9" src="static/images/TheAustralianChristmasBloodyMiracle.png"
+                            data-gif="static/images/AnAustralianBloodyMiraclePreview.gif"
+                            data-original="static/images/TheAustralianChristmasBloodyMiracle.png"
+                            alt="TheAustralianChristmasBloodyMiracle portada">
+                    </div>
+                    <div class="mini-descripcion">
+                        <h4>An Australian Christmas Bloody Miracle [SFM]</h4>
+                        <p>The Winglet</p>
+                        <p>➡ 25M hace 11a</p>
+                    </div>
                 </div>
-                <div class="mini-descripcion">
-                    <h4>Team Fabulous 2</h4>
-                    <p>kitty0706</p>
-                    <p>➡ 31M hace 14a</p>
-                </div>
-            </div>
-            <div class="caja-video inferior">
-                <div class="contenedor-miniVideo">
-                    <img id="portadaCambiante9" src="static/images/TheAustralianChristmasBloodyMiracle.png" alt="TheAustralianChristmasBloodyMiracle portada">
-                </div>
-                <div class="mini-descripcion">
-                    <h4>An Australian Christmas Bloody Miracle [SFM]</h4>
-                    <p>The Winglet</p>
-                    <p>➡ 25M hace 11a</p>
-                </div>
-            </div>
-            <div class="caja-video inferior">
-                <div class="contenedor-miniVideo">
-                    <img id="portadaCambiante10" src="static/images/TheRedTheBlueAndTheUgly.png" alt="TheRedTheBlueAndTheUgly portada">
-                </div>
-                <div class="mini-descripcion">
-                    <h4>The Red, The Blue and the Ugly [SFM]</h4>
-                    <p>The Winglet</p>
-                    <p>➡ 20M hace 4a</p>
+                <div class="caja-video inferior">
+                    <div class="contenedor-miniVideo">
+                        <img id="portadaCambiante10" src="static/images/TheRedTheBlueAndTheUgly.png"
+                            data-gif="static/images/TheRedTheBlueAndTheUgly.gif"
+                            data-original="static/images/TheRedTheBlueAndTheUgly.png"
+                            alt="TheRedTheBlueAndTheUgly portada">
+                    </div>
+                    <div class="mini-descripcion">
+                        <h4>The Red, The Blue and the Ugly [SFM]</h4>
+                        <p>The Winglet</p>
+                        <p>➡ 20M hace 4a</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-
 
     <script src="static/js/script.js"></script>
 </body>
