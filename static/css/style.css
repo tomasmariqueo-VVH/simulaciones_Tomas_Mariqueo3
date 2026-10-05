@@ -11,6 +11,11 @@ body{
     flex-direction: column;
 }
 
+.imagen-icono{
+    width: 20px;
+    height: 20px;
+}
+
 .nav{
     display: flex;
     flex-direction: row;
@@ -29,8 +34,8 @@ body{
 }
 
 .contenedor-miniVideo{
-    max-width: 400px;
-    max-height: 300px ;
+    max-width: 300px;
+    max-height: 200px ;
     overflow: hidden;
 }
 

@@ -1,5 +1,5 @@
 console.log(`Conexión con JS correcta!`)
-
+/* Variables para el cambio de imágenes */
 let imagen1 = document.querySelector("#portadaCambiante1")
 let imagen2 = document.querySelector("#portadaCambiante2")
 let imagen3 = document.querySelector("#portadaCambiante3")
@@ -89,4 +89,34 @@ imagen10.addEventListener("mouseover", function(){
 
 imagen10.addEventListener("mouseout", function(){
     this.src = "static/images/TheRedTheBlueAndTheUgly.png";
+})
+
+/* Variables para los botones de like/dislike */
+
+let contadorLike = 4;
+let contadorDislike = 0;
+let botonLike = document.querySelector("#boton-like")
+let valorDelLike = document.querySelector("#valor-like")
+let botonDislike = document.querySelector("#boton-dislike")
+let botonCompartir = document.querySelector("#boton-compartir")
+let botonAgregarCola = document.querySelector("#boton-agregarCola")
+
+botonLike.addEventListener("click", function(){
+    if(botonLike !== contadorLike){
+        contadorLike++;
+        valorDelLike.textContent = `${contadorLike}`;
+        this.img.src = "static/images/botonLike_activo.png"
+    } else {
+        console.log("El botón no existe o no está definido")
+    }
+})
+
+botonLike.addEventListener("click", function(){
+    if (botonLike > 5){
+        contadorLike--;
+        valorDelLike.textContent = `${contadorLike}`;
+        this.img.src = "static/images/botonLike_neutral.png"
+    } else {
+        console.log("El botón no existe o no está definido")
+    }
 })
